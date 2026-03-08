@@ -5,10 +5,22 @@
 # macOS
 .DS_Store
 **/.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
 
 # Node / npm
 node_modules/
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
 
 # Roku signing credentials
 rokudeploy.json
@@ -18,9 +30,15 @@ out/
 dist/
 .roku-deploy-staging/
 
-# BrightScript build cache
+# BrightScript / BrighterScript build cache
 .brightscript/
+*.bsconfig.tmp.json
+
+# Test coverage / reports
+coverage/
+.nyc_output/
 
 # Temp / logs
 *.log
 tmp/
+temp/
