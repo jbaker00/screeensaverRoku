@@ -1,0 +1,23 @@
+{
+  "name": "new-year-countdown-screensaver",
+  "version": "1.0.0",
+  "description": "Roku screensaver showing countdown to New Year",
+  "scripts": {
+    "deploy:living-room": "node deploy.js 192.168.6.36",
+    "deploy:guest": "node deploy.js 192.168.4.39",
+    "deploy:master": "node deploy.js 192.168.4.35",
+    "deploy:kids": "node deploy.js 192.168.4.34",
+    "deploy:all": "npm run deploy:living-room && npm run deploy:guest && npm run deploy:master && npm run deploy:kids",
+    "sca": "cd ../LiveCam/Sdkdocs/sca-cmd/bin && ./sca-cmd $(pwd) --severity info",
+    "lint": "npx bslint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@rokucommunity/bslint": "^0.8.38",
+    "brighterscript": "^0.70.3",
+    "roku-deploy": "^3.16.1"
+  }
+}

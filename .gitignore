@@ -1,0 +1,26 @@
+# Roku channel archives
+*.zip
+*.pkg
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Node / npm
+node_modules/
+npm-debug.log*
+
+# Roku signing credentials
+rokudeploy.json
+
+# Roku build outputs
+out/
+dist/
+.roku-deploy-staging/
+
+# BrightScript build cache
+.brightscript/
+
+# Temp / logs
+*.log
+tmp/
