@@ -3,9 +3,6 @@ sub RunScreenSaver(args as Object)
     m.port = CreateObject("roMessagePort")
     screen.setMessagePort(m.port)
 
-    m.input = CreateObject("roInput")
-    m.input.setMessagePort(m.port)
-
     m.memMonitor = CreateObject("roAppMemoryMonitor")
     if m.memMonitor <> invalid then
         m.memMonitor.enableMemoryWarningEvent(true)
@@ -30,8 +27,6 @@ sub RunScreenSaver(args as Object)
 
         if msgType = "roSGScreenEvent" then
             if msg.isScreenClosed() then return
-        else if msgType = "roInputEvent" then
-            return
         else if msgType = "roAppMemoryMonitorEvent" then
             if msg.isMemoryWarning() then
                 print "[Screensaver] Memory warning - available: "; m.memMonitor.getChannelAvailableMemory()
@@ -40,8 +35,4 @@ sub RunScreenSaver(args as Object)
             print "[Screensaver] Low general memory event"
         end if
     end while
-end sub
-
-sub Main(args as Dynamic)
-    RunScreenSaver(args)
 end sub

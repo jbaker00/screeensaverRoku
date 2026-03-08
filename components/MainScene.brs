@@ -37,10 +37,6 @@ sub init()
     m.top.setFocus(true)
 end sub
 
-sub onLaunchArgs()
-    ' No-op: screensavers don't support deep linking but SCA requires the handler
-end sub
-
 ' Compute epoch seconds for Jan 1 00:00:00 UTC of the given year.
 ' Uses a brute-force accumulation from the Unix epoch (1970).
 function getEndOfYearEpoch(year as Integer) as LongInteger

@@ -2,8 +2,6 @@
 <component name="MainScene" extends="Scene">
   <interface>
     <field id="exitChannel" type="boolean" value="false" />
-    <field id="launchArgs" type="assocarray" onChange="onLaunchArgs" />
-    <field id="inputArgs" type="assocarray" onChange="onLaunchArgs" />
   </interface>
 
   <children>
