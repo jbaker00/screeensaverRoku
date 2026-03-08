@@ -78,7 +78,6 @@ _(1096 characters)_
 
 ---
 
-## Dev Credentials (for reference)
+## Dev Credentials
 
-- **DevID:** 07da01f5fdc89004abdf8c66cf8fb78dee3a45a8
-- **Signing Password:** EdJYWGZm0YaGZGQfH69MTA==
+Stored locally in `rokudeploy.json` (gitignored).
