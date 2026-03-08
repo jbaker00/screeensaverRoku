@@ -98,12 +98,3 @@ function zeroPad(value as Integer, width as Integer) as String
     end while
     return s
 end function
-
-function onKeyEvent(key as String, press as Boolean) as Boolean
-    if not press then return false
-    if key = "back" then
-        m.top.exitChannel = true
-        return true
-    end if
-    return false
-end function
