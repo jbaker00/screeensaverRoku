@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+  <interface>
+    <field id="exitChannel" type="boolean" value="false" />
+    <field id="launchArgs" type="assocarray" onChange="onLaunchArgs" />
+    <field id="inputArgs" type="assocarray" onChange="onLaunchArgs" />
+  </interface>
+
+  <children>
+    <!-- Dark gradient background -->
+    <Rectangle id="background"
+               width="1920" height="1080"
+               color="0x0D0D2BFF" />
+
+    <!-- Subtle decorative top line -->
+    <Rectangle id="topAccent"
+               width="600" height="2"
+               translation="[660, 280]"
+               color="0xFFD70066" />
+
+    <!-- Title -->
+    <Label id="titleLabel"
+           text="NEW YEAR COUNTDOWN"
+           translation="[0, 300]"
+           width="1920"
+           horizAlign="center"
+           font="font:SmallBoldSystemFont"
+           color="0xFFD700FF" />
+
+    <!-- Target year label -->
+    <Label id="yearLabel"
+           text=""
+           translation="[0, 360]"
+           width="1920"
+           horizAlign="center"
+           font="font:SmallSystemFont"
+           color="0xCCCCCCFF" />
+
+    <!-- Main countdown display -->
+    <Label id="countdownLabel"
+           text="---:--:--:--"
+           translation="[0, 420]"
+           width="1920"
+           horizAlign="center"
+           font="font:LargeBoldSystemFont"
+           color="0xFFFFFFFF" />
+
+    <!-- Unit labels beneath countdown -->
+    <Label id="unitsLabel"
+           text="days       hours      mins       secs"
+           translation="[0, 510]"
+           width="1920"
+           horizAlign="center"
+           font="font:SmallestSystemFont"
+           color="0x999999FF" />
+
+    <!-- Subtle decorative bottom line -->
+    <Rectangle id="bottomAccent"
+               width="600" height="2"
+               translation="[660, 560]"
+               color="0xFFD70066" />
+
+    <!-- Sparkle animation dot (subtle visual interest) -->
+    <Rectangle id="sparkle"
+               width="4" height="4"
+               translation="[958, 590]"
+               color="0xFFD70000"
+               opacity="0.0" />
+  </children>
+
+  <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+</component>
