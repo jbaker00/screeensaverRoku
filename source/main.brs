@@ -16,6 +16,11 @@ sub RunScreenSaver()
         m.devInfo.enableLowGeneralMemoryEvent(true)
     end if
 
+    ' Required by certification 5.2 — roInput object must exist with message port set
+    ' so the channel can receive roInputEvent messages from the firmware.
+    m.inputObj = CreateObject("roInput")
+    m.inputObj.setMessagePort(m.port)
+
     scene = screen.CreateScene("MainScene")
     screen.show()
 
@@ -29,6 +34,12 @@ sub RunScreenSaver()
                 print "[Screensaver] Memory warning - available: "; m.memMonitor.getChannelAvailableMemory()
             else if msgType = "roDeviceInfoEvent"
                 print "[Screensaver] Low general memory event"
+            else if msgType = "roInputEvent"
+                ' Required by certification 5.2 — Direct to Play.
+                evtData   = msg.getData()
+                contentId = evtData.contentId
+                mediaType = evtData.mediaType
+                print "[Screensaver] roInputEvent contentId=" contentId " mediaType=" mediaType
             end if
         end if
     end while
