@@ -1,3 +1,18 @@
+' Required by certification 5.2 — Direct to Play / Deep Linking.
+' Screensavers use RunScreenSaver() as their entry point, but the cert
+' checker requires RunUserInterface(input) to exist and read contentId/mediaType
+' from the initial launch input parameter.
+sub RunUserInterface(input as Object)
+    if input <> invalid
+        contentId = input.contentId
+        mediaType = input.mediaType
+        if contentId <> invalid and contentId <> ""
+            print "[Screensaver] Deep link launch contentId=" contentId " mediaType=" mediaType
+        end if
+    end if
+    RunScreenSaver()
+end sub
+
 sub RunScreenSaver()
     screen = CreateObject("roSGScreen")
     m.port = CreateObject("roMessagePort")
